@@ -9,7 +9,9 @@ export default function GamecardContainer({ gamecards }) {
           key={index}
           title={game.name}
           releaseDate={game.released}
-          genres={game.genres} // Pass genres to the card
+          backgroundImg={game.background_image} // Pass background image to the card
+          genres={game.genres}
+          description={game.description} // Pass genres to the card
         />
       ))}
     </div>
