@@ -13,6 +13,7 @@ export default function Header() {
         <button onClick={() => onFilter("RPG")}>RPG</button>
         <button onClick={() => onFilter("Adventure")}>Adventure</button>
         <button onClick={() => onFilter("All")}>All</button>
+        <input type="text" placeholder="Search.."></input>
       </div>
     </header>
   );
