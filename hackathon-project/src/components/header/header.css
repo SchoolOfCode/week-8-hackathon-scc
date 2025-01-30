@@ -1,3 +1,42 @@
 .header{
-    background-color: blueviolet;
+/* Header.css */
+.header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Filter Buttons Container */
+  .filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .filter-buttons button {
+    background-color: lightgray
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Button Hover Effect */
+  .filter-buttons button:hover {
+    background-color: darkgrey;
+  }
+  
+  .filter-buttons button:focus {
+    outline: none;
+  }
+  
 }
