@@ -9,6 +9,7 @@ import Header from "./components/header/header.jsx";
 function App() {
   const [games, setGames] = useState([]);
   const [filteredGames, setFilteredGames] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
 
   // Fetch games from the RAWG API
   useEffect(() => {
@@ -36,9 +37,19 @@ function App() {
     }
   };
 
+  // Filter games based on the search query
+  const onSearch = (query) => {
+    console.log("Search Query:", query);
+    setSearchQuery(query);
+    const filtered = games.filter((game) =>
+      game.name.toLowerCase().includes(query.toLowerCase())
+    );
+    setFilteredGames(filtered); // Filter games by search query
+  }
+
   return (
     <div className="App">
-      <Header onFilter={onFilter} />
+      <Header onFilter={onFilter} onSearch={onSearch}/>
       <GamecardContainer gamecards={filteredGames} />
     </div>
   );
