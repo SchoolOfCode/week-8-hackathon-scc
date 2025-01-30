@@ -8,6 +8,7 @@ import Header from "./components/header/header.jsx";
 
 function App() {
   const [games, setGames] = useState([]);
+  const [filteredGames, setFilteredGames] = useState([]);
 
   // Fetch games from the RAWG API
   useEffect(() => {
@@ -17,15 +18,28 @@ function App() {
       );
       const data = await response.json();
       setGames(data.results); // Store the game results in state
+      setFilteredGames(data.results); // Initially show all games
     };
 
     fetchGames();
   }, []); // Empty array ensures this runs only once when the component mounts
 
+  // Filter games based on the selected genre
+  const onFilter = (genre) => {
+    if (genre === "All") {
+      setFilteredGames(games); // If 'All' is selected, show all games
+    } else {
+      const filtered = games.filter((game) =>
+        game.genres.some((g) => g.name.toLowerCase() === genre.toLowerCase())
+      );
+      setFilteredGames(filtered); // Filter games by genre
+    }
+  };
+
   return (
     <div className="App">
-      <Header />
-      <GamecardContainer gamecards={games} />
+      <Header onFilter={onFilter} />
+      <GamecardContainer gamecards={filteredGames} />
     </div>
   );
 }
