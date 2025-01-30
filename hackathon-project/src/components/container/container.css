@@ -7,14 +7,13 @@
   width: fit-content;
   margin: 0 auto; /* Ensure full centering */
 }
-
 .Gamecard {
   position: relative;
   box-sizing: border-box;
-  flex: 1 1 calc(33.333% - 20px);
-  min-width: 600px;
-  max-width: 900px;
-  height: 300px;
+  flex: 1 1 calc(25.5 - 20px);
+  min-width: 200px;
+  max-width: 340px;
+  height: 400px;
   background-color: #f4f4f4;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
@@ -25,7 +24,6 @@
   background-size: cover;
   background-position: center;
 }
-
 .Gamecard h3,
 .Gamecard h5 {
   position: relative;
@@ -35,15 +33,12 @@
   border-radius: 5px;
   display: inline-block;
 }
-
 .Gamecard h3 {
   margin-bottom: 5px;
 }
-
 .Gamecard h5 {
   margin-top: 0;
 }
-
 .Gamecard p {
   margin-top: 10px;
   position: relative;
