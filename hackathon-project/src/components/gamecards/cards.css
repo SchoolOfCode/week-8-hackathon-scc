@@ -1,0 +1,17 @@
+.Gamecard {
+    background-color: rgb(223, 52, 52); /* Placeholder color */
+    width: 100px; /* Adjust as needed */
+    height: 100px; /* Adjust as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 8px; /* Optional rounded corners */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
+    transition: transform 0.2s ease-in-out; /* Smooth hover effect */
+  }
+  .Gamecard:hover {
+    transform: scale(1.05);
+  
+  }
+  
