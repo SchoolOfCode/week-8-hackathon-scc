@@ -4,7 +4,8 @@ import viteLogo from '/vite.svg'
 
 
 import './App.css'
-import Container from './assets/components/container/container.jsx'
+import GamecardContainer from './components/container/container.jsx'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -31,6 +32,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <GamecardContainer/>
     </>
   )
 }

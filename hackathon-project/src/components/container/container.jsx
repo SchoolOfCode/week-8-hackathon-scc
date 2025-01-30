@@ -5,13 +5,46 @@ import Gamecard from "../gamecards/cards.jsx";
 import "./container.css";
 
 
-export default function GamecardContainer ({ PLACEHOLDERS}){
+export default function GamecardContainer ({ gamecards }) {
     return (
         <div className="gamecards-container">
-          //{gamecards.slice(0, 9).map((gamecard, index) => (
+             <Gamecard
+              key="INDEX"
+              title="TITLE"
+            />
             <Gamecard
               key="INDEX"
               title="TITLE"
             />
+            <Gamecard
+              key="INDEX"
+              title="TITLE"
+            />
+            <Gamecard
+              key="INDEX"
+              title="TITLE"
+            />
+            <Gamecard
+              key="INDEX"
+              title="TITLE"
+            />
+            <Gamecard
+              key="INDEX"
+              title="TITLE"
+            />
+            <Gamecard
+              key="INDEX"
+              title="TITLE"
+            />
+            <Gamecard
+              key="INDEX"
+              title="TITLE"
+            />
+            <Gamecard
+              key="INDEX"
+              title="TITLE"
+            />
+          
         </div>
-)}
+    );
+}

@@ -19,8 +19,7 @@ export default function Gamecard({ title, releaseDate }) {
     return (
         <div className="Gamecard">
             <h3> {title} </h3>
-            <h5> {releaseDate} </h5>
-        </div>
+          </div>
     );
         
         
