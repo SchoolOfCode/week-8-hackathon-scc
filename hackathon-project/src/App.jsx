@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import GamecardContainer from "./components/container/container.jsx";
 import "./App.css";
+import Header from "./components/header/header.jsx";
 
 // Updating App.jsx to Make the API Call:
 // We'll move the logic of fetching data into GamecardContainer, where we'll handle the API call and pass the results as props to the Gamecard.
@@ -23,6 +24,7 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
       <GamecardContainer gamecards={games} />
     </div>
   );
