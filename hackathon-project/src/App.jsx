@@ -15,7 +15,7 @@ function App() {
   useEffect(() => {
     const fetchGames = async () => {
       const response = await fetch(
-        "https://api.rawg.io/api/games?key=d0a3e280b6c545a288835deb5024c6f9&page_size=100"
+        "https://api.rawg.io/api/games?key=d0a3e280b6c545a288835deb5024c6f9&page_size=150"
       );
       const data = await response.json();
       setGames(data.results); // Store the game results in state
