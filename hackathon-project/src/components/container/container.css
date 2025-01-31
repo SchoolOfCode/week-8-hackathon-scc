@@ -28,6 +28,20 @@
   background-size: cover;
   background-position: center;
 }
+.expanded {
+   transform: scale(0.1); /* Make the card 0.1x bigger */
+   z-index: 1000; /* Bring to front */
+   position: absolute; /* Prevent movement */
+   top: 50%; 
+   left: 50%;
+   transform: translate(-50%, -50%) scale(2.5);
+   pointer-events: auto; /* Ensure expanded card remains clickable */
+  }
+  .disabled {
+   pointer-events: none; /* Prevent clicking on other cards */
+   opacity: 0.5; /* Optionally fade out other cards */
+  }
+
 .Gamecard h3,
 .Gamecard h5 {
   position: relative;
