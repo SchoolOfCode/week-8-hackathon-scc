@@ -1,7 +1,14 @@
+import { useState } from "react";
 import Gamecard from "../gamecards/cards.jsx";
 import "./container.css";
 
 export default function GamecardContainer({ gamecards }) {
+  const [expandedCard, setExpandedCard] = useState(null);
+
+  const handleCardClick = (cardId) => {
+    setExpandedCard((prev) => (prev === cardId ? null : cardId)); // Toggle expand/collapse
+  };
+
   return (
     <div className="gamecards-container">
       {gamecards.map((game, index) => (
@@ -9,10 +16,13 @@ export default function GamecardContainer({ gamecards }) {
           key={index}
           title={game.name}
           releaseDate={game.released}
-          backgroundImg={game.background_image} // Pass background image to the card
+          backgroundImg={game.background_image}
           genres={game.genres}
           description={game.description}
-          id={game.id} // Pass genres to the card
+          id={game.id}
+          isExpanded={expandedCard === game.id} // Check if this is the expanded card
+          isDisabled={expandedCard !== null && expandedCard !== game.id} // Disable others
+          onCardClick={handleCardClick} // Pass click handler
         />
       ))}
     </div>
