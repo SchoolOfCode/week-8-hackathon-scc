@@ -29,14 +29,6 @@
   background-position: center;
 }
 
-.game-description {
-  max-height: 500px;
-  font-size: 10px;
-  overflow-y: auto;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-}
-
 .expanded {
   transform: scale(0.1); /* Make the card 0.1x bigger */
   z-index: 1000; /* Bring to front */

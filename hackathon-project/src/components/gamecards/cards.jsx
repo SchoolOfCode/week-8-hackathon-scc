@@ -14,11 +14,12 @@ export default function Gamecard({
   description,
   id,
   isExpanded,
+  rating,
   isDisabled,
   onCardClick, // Function to handle click from parent
 }) {
   const [gameDescription, setGameDescription] = useState(
-    description ? stripHtmlTags(description) : ""
+    description ? stripHtmlTags(description) : "" // StripHTML tags gets rid of all the html tags that come with the JSON body.
   );
   const [loading, setLoading] = useState(false);
 
@@ -59,6 +60,8 @@ export default function Gamecard({
           <h3>{title}</h3>
           <br />
           <h5>{releaseDate}</h5>
+          <br />
+          <p>Rating: {rating}</p>
           <br />
           <p>
             <strong>Genres:</strong>{" "}

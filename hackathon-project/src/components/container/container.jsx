@@ -18,6 +18,7 @@ export default function GamecardContainer({ gamecards }) {
           releaseDate={game.released}
           backgroundImg={game.background_image}
           genres={game.genres}
+          rating={game.rating}
           description={game.description}
           id={game.id}
           isExpanded={expandedCard === game.id} // Check if this is the expanded card
