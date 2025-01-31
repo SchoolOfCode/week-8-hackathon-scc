@@ -1,5 +1,11 @@
 import { useState, useEffect } from "react";
 
+// Function to remove HTML tags from description
+const stripHtmlTags = (html) => {
+  const doc = new DOMParser().parseFromString(html, "text/html");
+  return doc.body.textContent || "";
+};
+
 export default function Gamecard({
   title,
   releaseDate,
@@ -11,7 +17,9 @@ export default function Gamecard({
   isDisabled,
   onCardClick, // Function to handle click from parent
 }) {
-  const [gameDescription, setGameDescription] = useState(description);
+  const [gameDescription, setGameDescription] = useState(
+    description ? stripHtmlTags(description) : ""
+  );
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -24,7 +32,7 @@ export default function Gamecard({
             `https://api.rawg.io/api/games/${id}?key=d0a3e280b6c545a288835deb5024c6f9`
           );
           const data = await response.json();
-          setGameDescription(data.description);
+          setGameDescription(stripHtmlTags(data.description)); // Strip HTML tags
         } catch (error) {
           console.error("Error fetching description:", error);
           setGameDescription("Error loading description.");
