@@ -15,7 +15,7 @@ function App() {
   useEffect(() => {
     const fetchGames = async () => {
       const response = await fetch(
-        "https://api.rawg.io/api/games?key=d0a3e280b6c545a288835deb5024c6f9&page_size=16"
+        "https://api.rawg.io/api/games?key=d0a3e280b6c545a288835deb5024c6f9&page_size=100"
       );
       const data = await response.json();
       setGames(data.results); // Store the game results in state
@@ -45,11 +45,11 @@ function App() {
       game.name.toLowerCase().includes(query.toLowerCase())
     );
     setFilteredGames(filtered); // Filter games by search query
-  }
+  };
 
   return (
     <div className="App">
-      <Header onFilter={onFilter} onSearch={onSearch}/>
+      <Header onFilter={onFilter} onSearch={onSearch} />
       <GamecardContainer gamecards={filteredGames} />
     </div>
   );

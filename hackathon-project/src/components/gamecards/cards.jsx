@@ -46,15 +46,18 @@ export default function Gamecard({
       }}
       onClick={() => !isDisabled && onCardClick(id)} // Ensure only clickable when allowed
     >
-      <h3>{title}</h3>
-      <br />
-      <h5>{releaseDate}</h5>
-      <br />
-      <p>
-        <strong>Genres:</strong> {genres.map((genre) => genre.name).join(", ")}
-      </p>
-
-      {isExpanded && (
+      {!isExpanded ? (
+        <>
+          <h3>{title}</h3>
+          <br />
+          <h5>{releaseDate}</h5>
+          <br />
+          <p>
+            <strong>Genres:</strong>{" "}
+            {genres.map((genre) => genre.name).join(", ")}
+          </p>
+        </>
+      ) : (
         <div className="game-description">
           {loading ? <p>Loading description...</p> : <p>{gameDescription}</p>}
         </div>
