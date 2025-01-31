@@ -1,18 +1,25 @@
 .header{
 /* Header.css */
 .header {
-    background-image: url("https://img.freepik.com/free-vector/dark-hexagonal-background-with-gradient-color_79603-1409.jpg");
-    height : 200px;
+    position: sticky; 
+    margin-top: 0;
     background-size: cover;
     background-position: center;
     color: white;
-    padding: 20px;
+    padding-bottom: 0;
     text-align: center;
+    top: 0;                    /* Stick the header to the top */
+    width: 100%;               /* Full width for the header */
+    backdrop-filter: blur(10px); /* Apply blur effect behind the header */
+    z-index: 1000;             /* Make sure the header stays on top */
+    padding: 10px 20px;        /* Padding inside the header */
+    padding-top: 0;            /* Remove any padding at the top of the header */
   }
   
   .header h1 {
     font-size: 2rem;
     margin-bottom: 20px;
+    margin-top: 0;
   }
   
   /* Filter Buttons Container */
@@ -51,7 +58,7 @@
     font-size: 1rem;
     border: 2px solid #5c6bc0;
     border-radius: 5px;
-    color: #333;
+    color: #ffffff;
     transition: border-color 0.3s ease;
   }
   

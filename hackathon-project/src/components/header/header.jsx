@@ -16,7 +16,7 @@ export default function Header({ onFilter, onSearch }) {
 
   return (
     <header className="header">
-      <h1>CSC Gamecards Catalogue</h1>
+      <h1 className="header h1">CSC Gamecards Catalogue</h1>
 
       {/* Genre Filter Buttons */}
       <Box
@@ -35,11 +35,7 @@ export default function Header({ onFilter, onSearch }) {
           <Button onClick={() => onFilter("Indie")}>Indie</Button>
           <Button onClick={() => onFilter("Adventure")}>Adventure</Button>
           <Button onClick={() => onFilter("RPG")}>RPG</Button>
-          <Button onClick={() => onFilter("Strategy")}>Strategy</Button>
           <Button onClick={() => onFilter("Shooter")}>Shooter</Button>
-          <Button onClick={() => onFilter("Casual")}>Casual</Button>
-          <Button onClick={() => onFilter("Simulation")}>Simulation</Button>
-          <Button onClick={() => onFilter("Arcade")}>Arcade</Button>
           <Button onClick={() => onFilter("Platformer")}>Platformer</Button>
           <Button onClick={() => onFilter("Sports")}>Sports</Button>
           <Button onClick={() => onFilter("Fighting")}>Fighting</Button>
@@ -49,13 +45,23 @@ export default function Header({ onFilter, onSearch }) {
         {/* Search bar */}
         {/* MUI TextField as search bar */}
         <TextField
-          id="outlined-search"
-          label="Search"
-          variant="outlined"  // You can change this to "filled" or "standard" as per your preference
-          value={searchQuery}
-          onChange={handleSearch}
-          style={{ width: '1235px' }} 
-        />
+  id="outlined-search"
+  label="Search"
+  variant="outlined"  // You can change this to "filled" or "standard" as per your preference
+  value={searchQuery}
+  onChange={handleSearch}
+  style={{ width: '1235px' }}
+  InputProps={{
+    style: {
+      color: '#ffffff', // Change the text color inside the input
+    },
+  }}
+  InputLabelProps={{
+    style: {
+      color: '#ffffff', // Change the label color
+    },
+  }}
+/>
       </Box>
     </header>
   );
