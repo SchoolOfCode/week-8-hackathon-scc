@@ -28,19 +28,28 @@
   background-size: cover;
   background-position: center;
 }
+
+.game-description {
+  max-height: 500px;
+  font-size: 10px;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+}
+
 .expanded {
-   transform: scale(0.1); /* Make the card 0.1x bigger */
-   z-index: 1000; /* Bring to front */
-   position: absolute; /* Prevent movement */
-   top: 50%; 
-   left: 50%;
-   transform: translate(-50%, -50%) scale(2.5);
-   pointer-events: auto; /* Ensure expanded card remains clickable */
-  }
-  .disabled {
-   pointer-events: none; /* Prevent clicking on other cards */
-   opacity: 0.5; /* Optionally fade out other cards */
-  }
+  transform: scale(0.1); /* Make the card 0.1x bigger */
+  z-index: 1000; /* Bring to front */
+  position: absolute; /* Prevent movement */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(2.5);
+  pointer-events: auto; /* Ensure expanded card remains clickable */
+}
+.disabled {
+  pointer-events: none; /* Prevent clicking on other cards */
+  opacity: 0.5; /* Optionally fade out other cards */
+}
 
 .Gamecard h3,
 .Gamecard h5 {
@@ -65,4 +74,12 @@
   color: white;
   border-radius: 5px;
   display: inline-block;
+}
+
+.game-description {
+  max-height: 300px; /* Adjust this value based on your preference */
+  overflow-y: auto; /* Makes the description scrollable when it exceeds max-height */
+  padding: 10px; /* Optional, adds some space inside the container */
+  background-color: rgba(0, 0, 0, 0.7); /* Optional, better readability */
+  color: white; /* Optional, for contrast */
 }
