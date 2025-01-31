@@ -1,14 +1,15 @@
 .gamecards-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 3 equal columns */
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
   gap: 10px; /* Space between Gamecards */
   justify-content: center; /* Center the grid horizontally */
   align-items: center; /* Center the items vertically if needed */
   width: fit-content;
   margin: 0 auto; /* Ensure full centering */
   margin-top: 50px;
+  max-height: 800px; /* Adjust to desired max height */
+  overflow-y: auto; /* Enables vertical scrolling if content exceeds max height */
 }
-
 .Gamecard {
   position: relative;
   box-sizing: border-box;
